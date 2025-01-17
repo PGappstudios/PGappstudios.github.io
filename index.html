@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+ng<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PG App Studios: Innovative app development and design for iOS and Android. We create engaging apps and games that inspire and delight users.">
+    <meta name="keywords" content="PG App Studios, app development, mobile apps, game development, user-centered design">
     <title>PG App Studios</title>
     <style>
         /* General Reset */
@@ -14,7 +16,7 @@
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
-            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to Blue Gradient */
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -65,6 +67,46 @@
             margin: 0.5rem 0;
         }
 
+        /* Our Apps Section */
+        #our-apps {
+            background: #f9f9f9;
+            padding: 2rem;
+        }
+        #our-apps h2 {
+            text-align: center;
+            color: #6a11cb;
+            margin-bottom: 1rem;
+        }
+        #our-apps div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #our-apps img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        #our-apps h3 {
+            margin-bottom: 0.5rem;
+        }
+        #our-apps p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        #our-apps a {
+            background: #6a11cb;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        #our-apps a:hover {
+            background: #2575fc;
+        }
+
         /* Contact Section */
         .contact-section {
             background: rgba(0, 0, 0, 0.6);
@@ -110,6 +152,28 @@
         footer a:hover {
             color: #fff200;
         }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p, .contact-section p {
+                font-size: 1rem;
+            }
+            main {
+                padding: 1rem;
+            }
+            #our-apps img {
+                width: 100px;
+            }
+            #our-apps h3 {
+                font-size: 1.5rem;
+            }
+            #our-apps p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,6 +203,16 @@
     </p>
 </main>
 
+<section id="our-apps">
+    <h2>Our Apps</h2>
+    <div>
+        <img src="Logo.png" alt="DocyScan Logo">
+        <h3>DocyScan</h3>
+        <p>Scan documents, business cards, and create personal notes with reminders.</p>
+        <a href="https://apps.apple.com/pt/app/docyscan/id6740208487?l=en-GB" target="_blank">Download on the App Store</a>
+    </div>
+</section>
+
 <section class="contact-section">
     <h2>Contact Us</h2>
     <p>Have an idea? Need help with app development? We'd love to hear from you!</p>
@@ -152,3 +226,4 @@
 
 </body>
 </html>
+
