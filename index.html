@@ -77,12 +77,15 @@
             color: #6a11cb;
             margin-bottom: 1rem;
         }
-        #our-apps div {
+        #our-apps .app-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        #our-apps .app {
+            text-align: center;
+            max-width: 200px;
         }
         #our-apps img {
             width: 150px;
@@ -205,17 +208,19 @@
 
 <section id="our-apps">
     <h2>Our Apps</h2>
-    <div>
-        <img src="logo.png" alt="DocyScan Logo">
-        <h3>DocyScan</h3>
-        <p>Scan documents, business cards, and create personal notes with reminders.</p>
-        <a href="https://apps.apple.com/pt/app/docyscan/id6740208487?l=en-GB" target="_blank">Download on the App Store</a>
-    </div>
-    <div>
-        <img src="STAR SEEKERS.png" alt="Star Seekers Logo">
-        <h3>Star Seekers</h3>
-        <p>Explore the stars and uncover mysteries in this interactive app.</p>
-        <a href="https://apps.apple.com/pt/app/star-seekers/id6738390556?l=en-GB" target="_blank">Download on the App Store</a>
+    <div class="app-container">
+        <div class="app">
+            <img src="logo.png" alt="DocyScan Logo">
+            <h3>DocyScan</h3>
+            <p>Scan documents, business cards, and create personal notes with reminders.</p>
+            <a href="https://apps.apple.com/pt/app/docyscan/id6740208487?l=en-GB" target="_blank">Download on the App Store</a>
+        </div>
+        <div class="app">
+            <img src="STAR SEEKERS.png" alt="Star Seekers Logo">
+            <h3>Star Seekers</h3>
+            <p>Explore the stars and uncover mysteries in this interactive app.</p>
+            <a href="https://apps.apple.com/pt/app/star-seekers/id6738390556?l=en-GB" target="_blank">Download on the App Store</a>
+        </div>
     </div>
 </section>
 
@@ -232,3 +237,4 @@
 
 </body>
 </html>
+
