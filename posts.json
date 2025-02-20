@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "The Future of iOS Development with Vision Pro",
+      "date": "2024-03-21",
+      "category": "iOS Development",
+      "image": "vision-pro-dev.jpg",
+      "excerpt": "Exploring the exciting possibilities that Apple Vision Pro brings to iOS development...",
+      "content": "As we enter a new era of spatial computing, Apple Vision Pro is revolutionizing how we think about app development...",
+      "tags": ["iOS", "Vision Pro", "Development"]
+    }
+  ]
+} 
