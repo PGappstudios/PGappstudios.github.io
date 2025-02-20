@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PG App Studios Blog - News, updates, and insights on iOS app development.">
-    <title>PG App Studios Blog</title>
+    <meta name="description" content="PG App Studios Blog: Insights into iOS development and our journey">
+    <meta name="keywords" content="PG App Studios, iOS development, app development blog, tech insights">
+    <meta property="og:title" content="PG App Studios - Blog">
+    <meta property="og:description" content="Insights into iOS development and our journey">
+    <meta property="og:image" content="your-logo-url.png">
+    <meta property="og:url" content="https://pgappstudios.github.io/blog.html">
+    <meta property="og:type" content="article">
+    <title>PG App Studios - Blog</title>
     <style>
         * {
             margin: 0;
@@ -13,8 +19,10 @@
         }
         body {
             font-family: 'Arial', sans-serif;
-            background: #f9f9f9;
             color: #333;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         nav {
             background: rgba(0, 0, 0, 0.6);
@@ -33,67 +41,127 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #6a11cb;
         }
         header {
             text-align: center;
-            padding: 2rem;
-            background: #6a11cb;
-            color: white;
+            padding: 3rem 1rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            margin-bottom: 2rem;
         }
         .blog-container {
             max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            margin: 0 auto;
+            padding: 2rem;
         }
         .blog-post {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
             margin-bottom: 2rem;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .blog-post h2 {
             color: #6a11cb;
+            margin-bottom: 1rem;
         }
-        .blog-post p {
-            margin-top: 0.5rem;
+        .blog-post .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .blog-post .read-more {
+            display: inline-block;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .blog-post .read-more:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            transform: translateY(-2px);
         }
         footer {
             text-align: center;
             padding: 1rem;
+            color: #fff;
             background: rgba(0, 0, 0, 0.6);
-            color: white;
+            margin-top: 2rem;
+        }
+        footer a {
+            color: #6a11cb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#our-apps">Our Apps</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-    </ul>
-</nav>
+    <header>
+        <h1>PG App Studios Blog</h1>
+        <p>Insights into iOS development and our journey</p>
+    </header>
 
-<header>
-    <h1>PG App Studios Blog</h1>
-</header>
+    <div class="blog-container">
+        <article class="blog-post">
+            <h2>Launching DocyScan: Our Journey to Simplify Document Scanning</h2>
+            <div class="date">March 15, 2024</div>
+            <img src="docyscan-preview.jpg" alt="DocyScan App Interface">
+            <p>We're excited to announce the launch of DocyScan, our latest iOS app designed to revolutionize document scanning...</p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
 
-<div class="blog-container">
-    <div class="blog-post">
-        <h2>Welcome to Our Blog</h2>
-        <p>Stay updated with our latest iOS app developments, tips, and industry news.</p>
+        <article class="blog-post">
+            <h2>The Making of Star Seekers: Bringing the Universe to Your iPhone</h2>
+            <div class="date">March 10, 2024</div>
+            <img src="star-seekers-preview.jpg" alt="Star Seekers Development">
+            <p>Star Seekers began as a passion project to make astronomy accessible to everyone...</p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="blog-post">
+            <h2>Implementing AI in Baby ID: Technical Challenges and Solutions</h2>
+            <div class="date">March 5, 2024</div>
+            <img src="babyid-preview.jpg" alt="Baby ID AI Features">
+            <p>Creating an AI-powered baby identification system presented unique challenges...</p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
     </div>
-    <div class="blog-post">
-        <h2>New Features in Our Apps</h2>
-        <p>We recently updated DocyScan with new scanning capabilities! Check it out.</p>
-    </div>
-</div>
 
-<footer>
-    <p>&copy; 2025 PG App Studios. All rights reserved.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 PG App Studios. All rights reserved.</p>
+        <p>
+            <a href="https://twitter.com/pgappstudios" target="_blank">Twitter</a> | 
+            <a href="https://linkedin.com/in/pgappstudios" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
 </body>
-</html>
+</html> 
