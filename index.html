@@ -149,6 +149,21 @@
                 align-items: center;
             }
         }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .company-logo {
+            height: 50px;
+            width: auto;
+        }
+        @media (max-width: 768px) {
+            .company-logo {
+                height: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -163,8 +178,11 @@
 </nav>
 
 <header>
-    <h1>PG App Studios</h1>
-    <p>Developing powerful and user-friendly utility apps for iOS.</p>
+    <div class="header-content">
+        <img src="PG logo no BK.png" alt="PG App Studios Logo" class="company-logo">
+        <h1>PG App Studios</h1>
+        <p>Developing powerful and user-friendly utility apps for iOS.</p>
+    </div>
 </header>
 
 <section id="our-apps">
@@ -205,8 +223,7 @@
 <footer>
     <p>&copy; 2025 PG App Studios. All rights reserved.</p>
     <p>
-        <a href="https://twitter.com/pgappstudios" target="_blank">Twitter</a> | 
-        <a href="https://linkedin.com/in/pgappstudios" target="_blank">LinkedIn</a>
+        <a href="https://x.com/PG_App_Studios" target="_blank">Twitter</a>
     </p>
 </footer>
 
