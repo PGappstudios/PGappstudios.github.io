@@ -7,7 +7,7 @@
     <meta name="keywords" content="PG App Studios, iOS development, app development blog, tech insights">
     <meta property="og:title" content="PG App Studios - Blog">
     <meta property="og:description" content="Insights into iOS development and our journey">
-    <meta property="og:image" content="your-logo-url.png">
+    <meta property="og:image" content="logo.png">
     <meta property="og:url" content="https://pgappstudios.github.io/blog.html">
     <meta property="og:type" content="article">
     <title>PG App Studios - Blog</title>
@@ -18,21 +18,27 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: #333;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background: #f5f5f7;
             line-height: 1.6;
             overflow-x: hidden;
         }
         nav {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
             padding: 1rem;
-            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
         nav ul {
             display: flex;
             justify-content: center;
             list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         nav ul li {
             margin: 0 15px;
@@ -40,76 +46,123 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             transition: 0.3s;
+            font-size: 1.1rem;
         }
         nav ul li a:hover {
-            color: #6a11cb;
+            color: #2575fc;
         }
         header {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 8rem 1rem 4rem;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: #fff;
-            background: rgba(0, 0, 0, 0.6);
             margin-bottom: 2rem;
         }
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
         .blog-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         .blog-post {
             background: #fff;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        .blog-post .image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .blog-post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .blog-post:hover img {
+            transform: scale(1.05);
+        }
+        .blog-content {
+            padding: 1.5rem;
         }
         .blog-post h2 {
-            color: #6a11cb;
-            margin-bottom: 1rem;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
         .blog-post .date {
-            color: #666;
+            color: #86868b;
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-        .blog-post img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 1rem 0;
+        .blog-post p {
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
-        .blog-post .read-more {
+        .read-more {
             display: inline-block;
             background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: #fff;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 25px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
+            font-weight: 500;
             transition: all 0.3s ease;
         }
-        .blog-post .read-more:hover {
+        .read-more:hover {
             background: linear-gradient(135deg, #2575fc, #6a11cb);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3);
         }
         footer {
             text-align: center;
-            padding: 1rem;
+            padding: 2rem;
             color: #fff;
-            background: rgba(0, 0, 0, 0.6);
-            margin-top: 2rem;
+            background: #1d1d1f;
+            margin-top: 4rem;
         }
         footer a {
-            color: #6a11cb;
+            color: #2575fc;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #6a11cb;
         }
         @media (max-width: 768px) {
             .blog-container {
                 padding: 1rem;
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -126,38 +179,50 @@
     </nav>
 
     <header>
-        <h1>PG App Studios Blog</h1>
-        <p>Insights into iOS development and our journey</p>
+        <h1>Latest Updates</h1>
+        <p>Discover our journey in iOS development and app innovation</p>
     </header>
 
     <div class="blog-container">
         <article class="blog-post">
-            <h2>Launching DocyScan: Our Journey to Simplify Document Scanning</h2>
-            <div class="date">March 15, 2024</div>
-            <img src="docyscan-preview.jpg" alt="DocyScan App Interface">
-            <p>We're excited to announce the launch of DocyScan, our latest iOS app designed to revolutionize document scanning...</p>
-            <a href="#" class="read-more">Read More</a>
+            <div class="image-container">
+                <img src="logo.png" alt="DocyScan App Interface">
+            </div>
+            <div class="blog-content">
+                <h2>DocyScan: Smart Document Management</h2>
+                <div class="date">March 20, 2024</div>
+                <p>DocyScan brings professional-grade document scanning to your iPhone. With advanced OCR technology and intelligent organization features, managing your documents has never been easier.</p>
+                <a href="https://apps.apple.com/pt/app/docyscan/id6740208487?l=en-GB" class="read-more" target="_blank">Learn More</a>
+            </div>
         </article>
 
         <article class="blog-post">
-            <h2>The Making of Star Seekers: Bringing the Universe to Your iPhone</h2>
-            <div class="date">March 10, 2024</div>
-            <img src="star-seekers-preview.jpg" alt="Star Seekers Development">
-            <p>Star Seekers began as a passion project to make astronomy accessible to everyone...</p>
-            <a href="#" class="read-more">Read More</a>
+            <div class="image-container">
+                <img src="STAR SEEKERS.png" alt="Star Seekers App">
+            </div>
+            <div class="blog-content">
+                <h2>Star Seekers: Your Gateway to the Cosmos</h2>
+                <div class="date">March 15, 2024</div>
+                <p>Embark on an astronomical journey with Star Seekers. Using advanced AR technology, explore constellations, planets, and celestial phenomena right from your iPhone.</p>
+                <a href="https://apps.apple.com/pt/app/star-seekers/id6738390556?l=en-GB" class="read-more" target="_blank">Learn More</a>
+            </div>
         </article>
 
         <article class="blog-post">
-            <h2>Implementing AI in Baby ID: Technical Challenges and Solutions</h2>
-            <div class="date">March 5, 2024</div>
-            <img src="babyid-preview.jpg" alt="Baby ID AI Features">
-            <p>Creating an AI-powered baby identification system presented unique challenges...</p>
-            <a href="#" class="read-more">Read More</a>
+            <div class="image-container">
+                <img src="Baby.png" alt="Baby AI App">
+            </div>
+            <div class="blog-content">
+                <h2>Baby AI: The Future of Baby Care</h2>
+                <div class="date">March 10, 2024</div>
+                <p>Baby AI revolutionizes baby care with cutting-edge AI technology. Track development milestones, identify patterns, and get personalized insights for your little one's growth.</p>
+                <a href="https://apps.apple.com/pt/app/babyid-ai/id6741074866?l=en-GB" class="read-more" target="_blank">Learn More</a>
+            </div>
         </article>
     </div>
 
     <footer>
-        <p>&copy; 2025 PG App Studios. All rights reserved.</p>
+        <p>&copy; 2024 PG App Studios. All rights reserved.</p>
         <p>
             <a href="https://twitter.com/pgappstudios" target="_blank">Twitter</a> | 
             <a href="https://linkedin.com/in/pgappstudios" target="_blank">LinkedIn</a>
