@@ -212,6 +212,40 @@
                 font-size: 1.2rem;
             }
         }
+        .post-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-y: auto;
+            z-index: 1000;
+            padding: 2rem;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            margin: 2rem auto;
+        }
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .post-content {
+            margin-top: 2rem;
+            line-height: 1.8;
+        }
     </style>
 </head>
 <body>
@@ -232,70 +266,35 @@
 
     <div class="container">
         <main class="blog-posts">
-            <article class="blog-post">
-                <img src="swift-development.jpg" alt="Swift Development">
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span>March 21, 2024</span>
-                        <span>iOS Development</span>
-                    </div>
-                    <h2>Getting Started with SwiftUI: A Beginner's Guide</h2>
-                    <p>SwiftUI has revolutionized the way we build iOS apps. In this comprehensive guide, we'll explore the basics of SwiftUI and how it can streamline your development process. We'll cover the fundamental concepts, best practices, and common pitfalls to avoid...</p>
-                    <a href="blog-post.html" class="read-more">Continue Reading</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <img src="app-marketing.jpg" alt="App Marketing">
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span>March 19, 2024</span>
-                        <span>App Marketing</span>
-                    </div>
-                    <h2>5 Essential App Store Optimization Tips for 2024</h2>
-                    <p>App Store Optimization (ASO) is crucial for the success of your iOS app. Learn the latest strategies to improve your app's visibility, increase downloads, and reach your target audience effectively...</p>
-                    <a href="blog-post.html" class="read-more">Continue Reading</a>
-                </div>
-            </article>
-
-            <div class="pagination">
-                <a href="#">&laquo; Previous</a>
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">Next &raquo;</a>
-            </div>
-        </main>
-
-        <aside class="sidebar">
-            <div class="sidebar-widget">
-                <h3>Categories</h3>
-                <ul class="categories-list">
-                    <li><a href="#">iOS Development</a></li>
-                    <li><a href="#">SwiftUI Tutorials</a></li>
-                    <li><a href="#">App Marketing</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Tech News</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-widget">
-                <h3>Recent Posts</h3>
-                <ul class="recent-posts-list">
-                    <li><a href="#">Getting Started with SwiftUI</a></li>
-                    <li><a href="#">App Store Optimization Tips</a></li>
-                    <li><a href="#">iOS 17 New Features</a></li>
-                    <li><a href="#">Mobile App Design Trends</a></li>
-                </ul>
-            </div>
-        </aside>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 PG App Studios. All rights reserved.</p>
-        <p>
-            <a href="https://x.com/PG_App_Studios" target="_blank">Twitter</a>
-        </p>
-    </footer>
-</body>
-</html> 
+            <script>
+            async function loadPosts() {
+                try {
+                    const response = await fetch('posts.json');
+                    const data = await response.json();
+                    
+                    const blogPosts = document.querySelector('.blog-posts');
+                    const postsHTML = data.posts
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .map(post => `
+                            <article class="blog-post">
+                                <img src="assets/images/${post.image}" alt="${post.title}">
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span>${new Date(post.date).toLocaleDateString('en-US', {
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric'
+                                        })}</span>
+                                        <span>${post.category}</span>
+                                    </div>
+                                    <h2>${post.title}</h2>
+                                    <p>${post.excerpt}</p>
+                                    <div class="tags">
+                                        ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                    </div>
+                                    <a href="#" onclick="showFullPost('${post.id}'); return false;" class="read-more">Continue Reading</a>
+                                </div>
+                            </article>
+                        `).join('');
+                    
+        
